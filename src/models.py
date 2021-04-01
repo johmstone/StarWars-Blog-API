@@ -100,34 +100,34 @@ class Planet(db.Model):
             # do not serialize the password, its a security breach
         }
 
-class CharacterFavorite(db.Model):
-    # Notice that each column is also a normal Python instance attribute.
-    id = db.Column(db.Integer, primary_key=True)
-    userid = db.Column(db.Integer, db.ForeignKey('User.id'))
-    characterid = db.Column(db.Integer, db.ForeignKey('Character.id'))
-    users = db.relationship(User)
-    characters = db.relationship(Character)
+# class CharacterFavorite(db.Model):
+#     # Notice that each column is also a normal Python instance attribute.
+#     id = db.Column(db.Integer, primary_key=True)
+#     userid = db.Column(db.Integer, db.ForeignKey('User.id'))
+#     characterid = db.Column(db.Integer, db.ForeignKey('Character.id'))
+#     users = db.relationship(User)
+#     characters = db.relationship(Character)
 
-    def serialize(self):
-        return {
-            "id": self.id,
-            "userid": self.userid,
-            "characterid": self.characterid,            
-            # do not serialize the password, its a security breach
-        }
+#     def serialize(self):
+#         return {
+#             "id": self.id,
+#             "userid": self.userid,
+#             "characterid": self.characterid,            
+#             # do not serialize the password, its a security breach
+#         }
 
-class PlanetFavorite(db.Model):
-    # Notice that each column is also a normal Python instance attribute.
-    id = db.Column(db.Integer, primary_key=True)
-    planetid = db.Column(db.Integer, db.ForeignKey('Planet.id'))
-    userid = db.Column(db.Integer, db.ForeignKey('User.id'))
-    planets = db.relationship(Planet)
-    users = db.relationship(User)
+# class PlanetFavorite(db.Model):
+#     # Notice that each column is also a normal Python instance attribute.
+#     id = db.Column(db.Integer, primary_key=True)
+#     planetid = db.Column(db.Integer, db.ForeignKey('Planet.id'))
+#     userid = db.Column(db.Integer, db.ForeignKey('User.id'))
+#     planets = db.relationship(Planet)
+#     users = db.relationship(User)
 
-    def serialize(self):
-        return {
-            "id": self.id,
-            "userid": self.userid,
-            "planetid": self.planetid,            
-            # do not serialize the password, its a security breach
-        }
+#     def serialize(self):
+#         return {
+#             "id": self.id,
+#             "userid": self.userid,
+#             "planetid": self.planetid,            
+#             # do not serialize the password, its a security breach
+#         }
